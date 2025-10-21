@@ -147,6 +147,27 @@
         color: white;
     }
     
+    /* Remove cabeçalhos e rodapés automáticos da impressão */
+    @page {
+        margin: 0.5in;
+        size: A4;
+    }
+    
+    @media print {
+        @page {
+            margin: 0.5in;
+            size: A4;
+        }
+        body {
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+        * {
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+    }
+    
     .header-line {
         width: 100%;
         height: 3px;
