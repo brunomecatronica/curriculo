@@ -223,6 +223,10 @@
         background: #3a4f5a;
     }
     
+    .mobile-name {
+        display: none;
+    }
+    
     /* Responsividade para tablets */
     @media (max-width: 1024px) {
         .container {
@@ -271,6 +275,17 @@
             object-fit: cover;
             margin: 0 auto;
         }
+        .mobile-name {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .mobile-name .name {
+            display: block;
+            font-size: 24px;
+            color: white;
+            margin-bottom: 0;
+            line-height: 1.2;
+        }
         .contact-item {
             margin-bottom: 15px;
             font-size: 13px;
@@ -285,6 +300,7 @@
             font-size: 28px;
             text-align: center;
             margin-bottom: 15px;
+            display: none;
         }
         .header-line {
             margin: 15px auto;
@@ -410,6 +426,10 @@
     <div class="sidebar">
         <div class="photo-container">
             <img class="photo" src="foto.jpg" alt="Foto de Bruno Gomes de Oliveira">
+        </div>
+        
+        <div class="mobile-name">
+            <h1 class="name">Bruno Gomes de<br>Oliveira</h1>
         </div>
         
         <h3>CONTATO</h3>
