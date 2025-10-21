@@ -1,0 +1,348 @@
+<!DOCTYPE html> <html lang="pt-BR"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Currículo - Bruno Gomes de Oliveira</title> <style> * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: #f5f5f5;
+        padding: 20px;
+    }
+    
+    .container {
+        max-width: 900px;
+        margin: 0 auto;
+        background: white;
+        display: grid;
+        grid-template-columns: 240px 1fr;
+        box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+    
+    .sidebar {
+        background: #4a6370;
+        color: white;
+        padding: 30px 20px;
+    }
+    
+    .photo-container {
+        background: white;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+    
+    .photo {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    
+    .sidebar h3 {
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin: 25px 0 15px 0;
+        letter-spacing: 1px;
+    }
+    
+    .contact-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 12px;
+        font-size: 12px;
+        line-height: 1.4;
+    }
+    
+    .contact-icon {
+        margin-right: 8px;
+        font-size: 14px;
+        min-width: 16px;
+    }
+    
+    .skills-list {
+        list-style: none;
+        font-size: 12px;
+        line-height: 1.8;
+    }
+    
+    .skills-list li {
+        margin-bottom: 8px;
+        padding-left: 12px;
+        position: relative;
+    }
+    
+    .skills-list li:before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: white;
+    }
+    
+    .language-item {
+        margin-bottom: 10px;
+    }
+    
+    .language-name {
+        font-size: 12px;
+        font-weight: bold;
+        margin-bottom: 4px;
+    }
+    
+    .language-level {
+        font-size: 11px;
+        margin-bottom: 5px;
+    }
+    
+    .progress-bar {
+        height: 8px;
+        background: rgba(255,255,255,0.3);
+        border-radius: 4px;
+        overflow: hidden;
+    }
+    
+    .progress-fill {
+        height: 100%;
+        background: white;
+        border-radius: 4px;
+    }
+    
+    .main-content {
+        padding: 40px;
+    }
+    
+    .header {
+        margin-bottom: 30px;
+    }
+    
+    .name {
+        font-size: 36px;
+        font-weight: bold;
+        color: #4a6370;
+        margin-bottom: 10px;
+        line-height: 1.2;
+    }
+    
+    .header-line {
+        width: 100%;
+        height: 3px;
+        background: #4a6370;
+        margin-top: 10px;
+    }
+    
+    .section {
+        margin-bottom: 30px;
+    }
+    
+    .section-title {
+        font-size: 16px;
+        font-weight: bold;
+        color: #333;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+        letter-spacing: 0.5px;
+    }
+    
+    .section-content {
+        font-size: 13px;
+        line-height: 1.6;
+        color: #333;
+        text-align: justify;
+    }
+    
+    .experience-item {
+        margin-bottom: 20px;
+    }
+    
+    .experience-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 8px;
+    }
+    
+    .job-title {
+        font-weight: bold;
+        font-size: 13px;
+        color: #333;
+    }
+    
+    .job-date {
+        font-size: 12px;
+        color: #666;
+    }
+    
+    .company {
+        font-size: 12px;
+        color: #4a6370;
+        font-weight: bold;
+        margin-bottom: 8px;
+    }
+    
+    .job-description {
+        font-size: 12px;
+        line-height: 1.6;
+        color: #333;
+        margin-left: 12px;
+    }
+    
+    .job-description li {
+        margin-bottom: 6px;
+    }
+    
+    .education-item {
+        margin-bottom: 15px;
+    }
+    
+    .degree {
+        font-weight: bold;
+        font-size: 13px;
+        color: #333;
+    }
+    
+    .institution {
+        font-size: 12px;
+        color: #4a6370;
+        font-weight: bold;
+        margin-top: 3px;
+    }
+    
+    .download-btn {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: #4a6370;
+        color: white;
+        padding: 12px 24px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: bold;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        transition: background 0.3s;
+        z-index: 1000;
+    }
+    
+    .download-btn:hover {
+        background: #3a4f5a;
+    }
+    
+    @media print {
+        body {
+            padding: 0;
+            background: white;
+        }
+        .container {
+            box-shadow: none;
+            max-width: 100%;
+        }
+        .download-btn {
+            display: none;
+        }
+    }
+</style>
+</head> <body> <a href="#" class="download-btn" onclick="downloadPDF(); return false;">📥 Baixar PDF</a>
+<div class="container">
+    <div class="sidebar">
+        <div class="photo-container">
+            <img class="photo" src="foto.jpg" alt="Foto de Bruno Gomes de Oliveira">
+        </div>
+        
+        <h3>CONTATO</h3>
+        <div class="contact-item">
+            <span class="contact-icon">📍</span>
+            <span>Rua Equador, 60 – Condomínio Parque da Pedra, Casa 03, Nova Friburgo-RJ</span>
+        </div>
+        <div class="contact-item">
+            <span class="contact-icon">📞</span>
+            <span>22999094630</span>
+        </div>
+        <div class="contact-item">
+            <span class="contact-icon">✉</span>
+            <span>brunoaudiovisual@hotmail.com</span>
+        </div>
+        <div class="contact-item">
+            <span class="contact-icon">📅</span>
+            <span>03 de agosto de 1977</span>
+        </div>
+        <div class="contact-item">
+            <span class="contact-icon">🌍</span>
+            <span>Brasileiro</span>
+        </div>
+        <div class="contact-item">
+            <span class="contact-icon">💑</span>
+            <span>Casado</span>
+        </div>
+        
+        <h3>HABILIDADES E COMPETÊNCIAS</h3>
+        <ul class="skills-list">
+            <li>Desenvolvimento de Sistemas Embarcados</li>
+            <li>Informática</li>
+            <li>Prototipagem rápida</li>
+            <li>Habilidade para trabalhar em equipe</li>
+            <li>Sempre aberto para aprender e evoluir</li>
+            <li>Gosto de estudar</li>
+            <li>Pensamento lógico apurado</li>
+            <li>Facilidade para lidar com pessoas com diferentes personalidades</li>
+        </ul>
+        
+        <h3>IDIOMAS</h3>
+        <div class="language-item">
+            <div class="language-name">Português</div>
+            <div class="language-level">Língua materna</div>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 100%"></div>
+            </div>
+        </div>
+        <div class="language-item">
+            <div class="language-name">Inglês</div>
+            <div class="language-level">Intermediário</div>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 60%"></div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="main-content">
+        <div class="header">
+            <h1 class="name">Bruno Gomes de<br>Oliveira</h1>
+            <div class="header-line"></div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">RESUMO</h2>
+            <p class="section-content">
+                Profissional de Mecatrônica com experiência em projetos e manutenção de sistemas automatizados. Especializado em integrar eficientemente componentes eletrônicos, mecânicos e de controle para otimizar processos industriais. Habilidade em identificar soluções inovadoras para desafios complexos. Busco oportunidades para aplicar minha expertise em mecatrônica, contribuindo para o crescimento e eficiência operacional da empresa.
+            </p>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">EXPERIÊNCIA PROFISSIONAL</h2>
+            <div class="experience-item">
+                <div class="experience-header">
+                    <span class="job-title">Desenvolvedor de Sistemas Embarcados</span>
+                    <span class="job-date">01/2023 – 05/2023</span>
+                </div>
+                <div class="company">VM9 – Nova Friburgo</div>
+                <ul class="job-description">
+                    <li>Projetos e prototipagem de sistemas para medição sensorial de temperatura e umidade para atualização de bases de dados de design gráfico.</li>
+                    <li>Desenvolvimento de aplicativo web e celular para recebimento e apresentação de dados armazenados em nuvem.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">FORMAÇÃO ACADÊMICA</h2>
+            <div class="education-item">
+                <div class="degree">Técnico: Mecatrônica, 02/2020 – 07/2021</div>
+                <div class="institution">SENAI – Nova Friburgo</div>
+            </div>
+            <div class="education-item">
+                <div class="degree">Superior: Tecnologias de Gravação e Produção Fonográfica, 08/2001 – 05/2003</div>
+                <div class="institution">Universidade Estado de Sá – Rio de Janeiro</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function downloadPDF() {
+        window.print();
+    }
+</script>
+</body> </html>
