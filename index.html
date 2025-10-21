@@ -227,13 +227,6 @@
         display: none;
     }
     
-    .photo-mobile {
-        display: none;
-    }
-    
-    .photo-desktop {
-        display: block;
-    }
     
     /* Responsividade para tablets */
     @media (max-width: 1024px) {
@@ -289,12 +282,6 @@
             margin: 0 auto;
             border: 4px solid white;
             box-shadow: 0 0 10px rgba(0,0,0,0.3);
-        }
-        .photo-desktop {
-            display: none;
-        }
-        .photo-mobile {
-            display: block;
         }
         .mobile-name {
             text-align: center;
@@ -505,8 +492,7 @@
 <div class="container">
     <div class="sidebar">
         <div class="photo-container">
-            <img class="photo photo-desktop" src="foto.jpg" alt="Foto de Bruno Gomes de Oliveira">
-            <img class="photo photo-mobile" src="foto2.jpg" alt="Foto de Bruno Gomes de Oliveira">
+            <img class="photo" src="foto.jpg" alt="Foto de Bruno Gomes de Oliveira">
         </div>
         
         <div class="mobile-name">
