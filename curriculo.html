@@ -235,6 +235,37 @@
         .download-btn {
             display: none;
         }
+        /* Preserva cores na impressão */
+        .sidebar {
+            background: #4a6370 !important;
+            color: white !important;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+        .sidebar h3 {
+            color: white !important;
+        }
+        .contact-icon svg {
+            fill: white !important;
+        }
+        .skills-list li:before {
+            color: white !important;
+        }
+        .progress-fill {
+            background: white !important;
+        }
+        .header-line {
+            background: #4a6370 !important;
+        }
+        .name {
+            color: #4a6370 !important;
+        }
+        .company {
+            color: #4a6370 !important;
+        }
+        .institution {
+            color: #4a6370 !important;
+        }
     }
 </style>
 </head> <body> <a href="#" class="download-btn" onclick="downloadPDF(); return false;">📥 Baixar PDF</a>
@@ -367,7 +398,26 @@
 
 <script>
     function downloadPDF() {
-        window.print();
+        // Força a preservação de cores antes da impressão
+        const style = document.createElement('style');
+        style.textContent = `
+            @media print {
+                * {
+                    -webkit-print-color-adjust: exact !important;
+                    print-color-adjust: exact !important;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Pequeno delay para garantir que os estilos sejam aplicados
+        setTimeout(() => {
+            window.print();
+            // Remove o estilo após a impressão
+            setTimeout(() => {
+                document.head.removeChild(style);
+            }, 1000);
+        }, 100);
     }
 </script>
 </body> </html>
