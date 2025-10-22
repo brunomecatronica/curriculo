@@ -580,6 +580,14 @@
         bottom: 15px;
         right: 15px;
         text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    
+    .qr-code-container:hover {
+        transform: scale(1.05);
+        opacity: 0.9;
     }
     
     .qr-code {
@@ -752,6 +760,7 @@
             position: absolute !important;
             bottom: -30px !important;
             right: 15px !important;
+            text-decoration: none !important;
         }
         
         .qr-code {
@@ -936,12 +945,12 @@
             </div>
         </div>
         
-        <div class="qr-code-container">
+        <a href="https://brunomecatronica.github.io/portifolio-bruno/index.html" target="_blank" class="qr-code-container">
             <div class="qr-code">
                 <img src="qrcodeportifolio.svg" alt="QR Code Portfólio">
             </div>
             <div class="qr-text">Acesse o Portfólio on-line</div>
-        </div>
+        </a>
     </div>
 </div>
 
